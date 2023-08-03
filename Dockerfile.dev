@@ -1,0 +1,15 @@
+# Use the official OpenJDK 17 image as the base image
+FROM openjdk:17-jdk
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the compiled JAR file into the container
+COPY /target/ms-saludo-mvn-0.0.1-SNAPSHOT.jar /app/
+
+# Expose the port on which your Spring Boot application is running
+EXPOSE 8080
+
+# Command to run the Spring Boot application
+CMD ["java", "-jar", "ms-saludo-mvn-0.0.1-SNAPSHOT.jar"]
+
